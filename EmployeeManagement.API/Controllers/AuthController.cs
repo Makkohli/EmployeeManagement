@@ -1,7 +1,8 @@
-﻿using EmployeeManagement.Shared.Models;
-using EmployeeManagement.Auth.Services;
+﻿using EmployeeManagement.Auth.Services;
 using EmployeeManagement.Infrastructure.DbContext;
+using EmployeeManagement.Shared.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -49,6 +50,9 @@ namespace EmployeeManagement.API.Controllers
 
             if (existing != null)
                 return BadRequest("User already exists");
+
+            var hasher = new PasswordHasher<User>();
+            user.Password = hasher.HashPassword(user, user.Password);
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
