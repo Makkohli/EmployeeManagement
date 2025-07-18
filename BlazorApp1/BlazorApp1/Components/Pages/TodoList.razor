@@ -1,0 +1,32 @@
+﻿@page "/todo"
+@rendermode InteractiveServer
+
+<h3>Todo</h3>
+<h3>Todo (@todolist.Count(todo => !todo.Isdone))</h3>
+
+@code {
+    private List<Todo> todolist = new();
+    string newTodo = " ";
+}
+
+<ul>
+    @foreach (var todo in todolist)
+    {
+
+        <li>
+        <input type="checkbox" @bind="todo.Isdone"/> 
+        @todo.Title</li>
+    }
+
+</ul>
+
+<input @bind="newTodo"/>
+<button @onclick="AddTodod">Add to do </button>
+
+@code{
+    void AddTodod()
+    {
+        todolist.Add(new Todo() { Title = newTodo });
+        newTodo = string.Empty; // clear input after adding
+    }
+}
