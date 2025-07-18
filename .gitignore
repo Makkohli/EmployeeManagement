@@ -1,0 +1,76 @@
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## Build Results
+bin/
+obj/
+out/
+GeneratedFiles/
+
+## Package management
+packages/
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+*.lock.json
+project.lock.json
+project.fragment.lock.json
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## EF Core Migrations
+**/Migrations/*Snapshot.cs
+**/Migrations/*Designer.cs
+**/Migrations/*.resx
+# (optional) Ignore all migrations
+# **/Migrations/
+
+## Publish results
+wwwroot/
+dist/
+build/
+*.publish.xml
+
+## Blazor WASM
+**/wwwroot/service-worker-assets.js
+**/wwwroot/_framework/
+**/wwwroot/_content/
+**/wwwroot/*.gz
+**/wwwroot/*.br
+**/wwwroot/*.dll
+
+## Logs
+*.log
+logs/
+Log/
+
+## Secrets / Keys / Config (optional - see note)
+secrets.json
+appsettings.Development.json
+appsettings.json
+
+## Others
+*.DS_Store
+*.env
+*.pdb
+*.swp
+*.tmp
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## macOS / Linux
+ehthumbs.db
+Thumbs.db
+.DS_Store
+*.sw?
+
+## User-specific files
+*.userprefs
+*.userosscache
+*.sln.docstates
